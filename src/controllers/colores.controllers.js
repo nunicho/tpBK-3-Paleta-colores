@@ -65,8 +65,18 @@ export const obtenerColor = async (req, res)=>{
 }
 export const editarColor = async (req, res)=>{
   try{
+
     //buscar el color por el id, luego modificar los datos con el body
     await Color.findByIdAndUpdate(req.params.id,req.body);
+       //manejar los errores de express-validator
+     const errores = validationResult(req);
+    if(!errores.isEmpty()){
+      return res.status(400).json({
+        errores: errores.array()
+      })
+    }
+    //extraer del body los datos
+    console.log(req.body);
     //responder al frontend
     res.status(200).json({
       mensaje: 'El color fue editado correctamente'
