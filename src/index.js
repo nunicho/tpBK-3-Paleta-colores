@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from "morgan"
 import cors from 'cors'
 import path from 'path'
-import productosRouter from './routes/colores.routes' //coloresRouter es un nombre que cambié de routes, no afecta en nada
+import coloresRouter from './routes/colores.routes' //coloresRouter es un nombre que cambié de routes, no afecta en nada
 import './database'
 
 
@@ -31,5 +31,5 @@ app.use(express.static(path.join(__dirname, '../public')))
 console.log(path.join(__dirname, '../public'))
 
 //rutas: nombre de dominio + ---- 
-app.use('/apicolor', productosRouter)
+app.use('/apicolor', coloresRouter)
 // http://localhost:4000/

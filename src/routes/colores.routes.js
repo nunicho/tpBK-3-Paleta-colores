@@ -42,7 +42,7 @@ router
   );
 
 router
-  .route("/color/:id")
+  .route("/colores/:id")
   .get(obtenerColor)
   .put(editarColor)
   .delete(borrarColor);
