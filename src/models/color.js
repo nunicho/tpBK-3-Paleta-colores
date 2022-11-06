@@ -6,21 +6,16 @@ const colorSchema = new Schema({
     nombreColor:{
         type: String,
         required:true,
-        unique:true,
         minLength:2,
         maxLength:50 
     },
-    codigoHexadecimal:{
-        type:String,
-        required:true,
-        min: 1,
-        max: 200
+    colorHexadecimal:{
+        type:String,      
+        
     },
-    codigoRGBRGBA:{
-        type: String,
-        required:true,
-        min: 1,
-        max: 200
+    colorRGBRGBA:{
+        type: String,      
+                     
     }
 })
 
